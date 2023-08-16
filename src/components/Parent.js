@@ -4,8 +4,12 @@ import Child from "./Child";
 const Parent = () => {
     const [itemName, setItemName] = useState('');
     const [itemPrice, setItemPrice] = useState('');
-    const [itemList, setItemList] = useState([]);
-    const [key, setKey] = useState(0);
+    const [itemList, setItemList] = useState([
+        {key: 0, itemName: 'item1', itemPrice: 2},
+        {key: 1, itemName: 'item2', itemPrice: 3},
+        {key: 2, itemName: 'item3', itemPrice: 4},
+    ]);
+    const [key, setKey] = useState(itemList.length);
     const handleClick = () => {
         setItemList([...itemList, {key: key, itemName: itemName, itemPrice: itemPrice}]);
         setKey(key+1);
