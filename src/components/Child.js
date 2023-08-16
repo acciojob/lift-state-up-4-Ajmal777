@@ -3,7 +3,11 @@ import React from "react";
 const Child = ({ itemList, setItemList }) =>{
 
     function handleClick(key){
-        setItemList(itemList => itemList.filter(item => item.id !== key));
+        console.log(key);
+        setItemList(itemList => 
+            itemList.filter(item => item.key !== key)
+        );
+        console.log(itemList);
     }
 
     return (
@@ -14,7 +18,7 @@ const Child = ({ itemList, setItemList }) =>{
                     itemList.map(item =>
                         <li key={item.key}>
                             {item.itemName} - ${item.itemPrice} 
-                            <button onclick={()=>handleClick(item.key)}>Remove</button> 
+                            <button onClick={()=>handleClick(item.key)}>Remove</button> 
                         </li>
                     )
                 }
