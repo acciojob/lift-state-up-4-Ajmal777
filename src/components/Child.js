@@ -11,16 +11,14 @@ const Child = ({ itemList, setItemList }) =>{
     return (
         <div className="child">
             <h2>Child Component</h2>
-            <ul>
-                {
-                    itemList.map(item =>
-                        <li key={item.key}>
-                            {item.itemName} - ${item.itemPrice} 
-                            <button onClick={()=>handleClick(item.key)}>Remove</button> 
-                        </li>
-                    )
-                }
-            </ul>
+            {
+                itemList.map(item =>
+                    <li key={item.key}>
+                        {item.itemName} - ${item.itemPrice} 
+                        <button onClick={()=>handleClick(item.key)}>Remove</button> 
+                    </li>
+                )
+            }
         </div>
     )
 }
