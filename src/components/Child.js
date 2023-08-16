@@ -1,9 +1,9 @@
 import React from "react";
 
-const Child = ({ cartItems, setItemList }) =>{
+const Child = ({ itemList, setItemList }) =>{
 
     function handleClick(key){
-        setItemList(cartItems => cartItems.filter(item => item.id !== key));
+        setItemList(itemList => itemList.filter(item => item.id !== key));
     }
 
     return (
@@ -11,9 +11,12 @@ const Child = ({ cartItems, setItemList }) =>{
             <h2>Child Component</h2>
             <ul>
                 {
-                    cartItems.map(item =>{
-                        <li key={item.key}>{item.itemName} - ${item.itemPrice} <button onclick={()=>handleClick(item.key)}>Remove</button> </li>
-                    })
+                    itemList.map(item =>
+                        <li key={item.key}>
+                            {item.itemName} - ${item.itemPrice} 
+                            <button onclick={()=>handleClick(item.key)}>Remove</button> 
+                        </li>
+                    )
                 }
             </ul>
         </div>
