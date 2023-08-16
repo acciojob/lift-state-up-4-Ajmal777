@@ -11,7 +11,6 @@ const Parent = () => {
         setKey(key+1);
         setItemName('');
         setItemPrice('');
-        console.log(itemList);
     }
 
     return (

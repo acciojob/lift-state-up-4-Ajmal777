@@ -3,11 +3,9 @@ import React from "react";
 const Child = ({ itemList, setItemList }) =>{
 
     function handleClick(key){
-        console.log(key);
         setItemList(itemList => 
             itemList.filter(item => item.key !== key)
         );
-        console.log(itemList);
     }
 
     return (
